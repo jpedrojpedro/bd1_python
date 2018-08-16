@@ -1,5 +1,6 @@
-FROM jazzdd/alpine-flask:python3
+FROM python:3-alpine
 
 LABEL maintainer="João Pedro Pinheiro <joaopedro.pinheiro88@gmail.com>"
 
-# RUN pip install -r /var/tmp/requirements.txt
+ADD docker/requirements.txt /var/tmp
+RUN pip install -r /var/tmp/requirements.txt
